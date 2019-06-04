@@ -33,7 +33,7 @@ class LocationList extends Component {
     getLocation() {
         this.state.location.map(location => {
             let restaurants = this.state.restaurants
-            axios.get('/restaurant/getRestaurantsDetails/' + location).then(res => {
+            axios.get('http://localhost:1050/restaurant/getRestaurantsDetails/' + location).then(res => {
                 restaurants[location] = res.data.message
                 this.setState({ restaurants: restaurants, errorMessage: "", loading: false, temp: true })
             }).catch(error => {

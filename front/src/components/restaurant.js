@@ -210,7 +210,7 @@ class Menu extends React.Component {
       email: this.state.form.email,
       password: this.state.form.password
     }
-    axios.post('/auth/login', loginObj).then((response) => {
+    axios.post('http://localhost:1050/auth/login', loginObj).then((response) => {
       this.setState({ successMessage: response.data[0], errorMessage: '', name: response.data[0].name, customerId: response.data[0].customerId, showLoginForm: false })
       localStorage.setItem('admin', response.data[0].admin)
       localStorage.setItem('customerId', response.data[0].customerId)
@@ -389,7 +389,7 @@ class AddReview extends React.Component {
       reviewBy: this.props.name,
       customerId: localStorage.getItem('customerId')
     };
-    axios.post( "/restaurant/insertReview/" + this.props.restaurantName, reviewObj ).then(response => {
+    axios.post( "http://localhost:1050/restaurant/insertReview/" + this.props.restaurantName, reviewObj ).then(response => {
         this.setState({ addReviewSuccessMessage: response.data.message });
       }).catch(err => {
         if (err) {
@@ -540,7 +540,7 @@ class ShowRate extends React.Component {
     var ratingObj = {
       ratings: (event.target.value - 1) * 25
     };
-    axios.post("/restaurant/giveRating/" + this.props.restaurantName, ratingObj).then(response => {
+    axios.post("http://localhost:1050/restaurant/giveRating/" + this.props.restaurantName, ratingObj).then(response => {
         this.setState({ successMessage: response.data.message });
       }).catch(err => {
       });
@@ -622,7 +622,7 @@ class Restaurant extends React.Component {
         localLoggedIn: true
       });
     }
-    axios.get("/restaurant/getRestaurantDetails/" + this.props.restaurantName).then(res => {
+    axios.get("http://localhost:1050/restaurant/getRestaurantDetails/" + this.props.restaurantName).then(res => {
       // console.log(res.data)
       this.setState({ restaurantData: res.data.message[0], errorMessage: "", loading: false, defaultLoading: false });
     }).catch(error => {
@@ -644,7 +644,7 @@ class Restaurant extends React.Component {
       this.setState({ pathChangeError: true })
     }
 
-    axios.get("/restaurant/getRestaurantsDetails/" + this.props.location).then(response => {
+    axios.get("http://localhost:1050/restaurant/getRestaurantsDetails/" + this.props.location).then(response => {
       for (let i = 0; i < response.data.message.length; i++) {
         if (
           response.data.message[i].restaurantName !== this.props.restaurantName && response.data.message[i].restaurantName.length <= 15) {
@@ -1051,7 +1051,7 @@ class RestaurantHome extends React.Component {
       this.setState({
         localLoggedIn: true
       });
-      axios.get('/auth/getCustomerDetails/' + this.props.match.params.customerId).then((response) => {
+      axios.get('http://localhost:1050/auth/getCustomerDetails/' + this.props.match.params.customerId).then((response) => {
         if (response.data.message[0].orders.length > 0) {
           if (response.data.message[0].orders[response.data.message[0].orders.length - 1].orderStatus === "inProgress") {
             localStorage.setItem('orderPlaced', true)

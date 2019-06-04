@@ -39,7 +39,7 @@ class QuickSearch extends React.Component {
             this.setState({ pathChangeError: true })
         }
         else {
-            axios.get("/restaurant/getRestaurantsDetails/" + location).then((response) => {
+            axios.get("http://localhost:1050/restaurant/getRestaurantsDetails/" + location).then((response) => {
                 // console.log(response)
                 this.setState({ restaurants: response.data.message, loading: false })
             }).catch((err) => {

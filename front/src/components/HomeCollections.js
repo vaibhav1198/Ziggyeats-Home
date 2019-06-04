@@ -25,11 +25,11 @@ class HomeCollections extends Component {
     }
 
     getRestaurants = () => {
-        axios.get('/restaurant/getRestaurantsByTrendCountLoc/' + this.state.currentCity).then((response) => {
+        axios.get('http://localhost:1050/restaurant/getRestaurantsByTrendCountLoc/' + this.state.currentCity).then((response) => {
            this.setState({ trendingRestaurants :response.data.message })
         })
 
-        axios.get('/restaurant/getRestaurantsByRatings/' + this.state.currentCity).then((response) => {
+        axios.get('http://localhost:1050/restaurant/getRestaurantsByRatings/' + this.state.currentCity).then((response) => {
             //console.log("++++", response.data.message)
             this.setState({ popularRestaurants :response.data.message })
         })

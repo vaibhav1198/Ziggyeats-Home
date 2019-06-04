@@ -28,7 +28,7 @@ function checkLogin() {
     }
     else {
         if (Number(path[path.length - 2])) {
-            url = 'http://ziggy-eats.herokuapp.com';
+            url = 'http://localhost:3000';
             var tempPath = '';
 
             for (var i = 0; i < path.length - 2; i++) {

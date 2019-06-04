@@ -95,7 +95,7 @@ export default class SearchBar extends React.Component {
         }
     }
     getLocation() {
-        axios.get('/restaurant/getRestaurants/' + this.state.city.code).then(res => {
+        axios.get('http://localhost:1050/restaurant/getRestaurants/' + this.state.city.code).then(res => {
             this.setState({ restaurants: res.data.message, errorMessage: "" })
         }).catch(error => {
             if (error.res) {

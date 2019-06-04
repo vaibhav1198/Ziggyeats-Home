@@ -197,7 +197,7 @@ class CustomerPortal extends React.Component {
             errorMessage: '',
             successMessage: ''
         })
-        axios.get('/auth/getCustomerDetails/' + this.state.customerId).then(response => {
+        axios.get('http://localhost:1050/auth/getCustomerDetails/' + this.state.customerId).then(response => {
             // console.log(response.data.message[0].orders)
             this.setState({ userData: response.data.message[0], errorMessage: '', loading: false })
             //console.log(this.state.userData)

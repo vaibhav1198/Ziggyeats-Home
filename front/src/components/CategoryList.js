@@ -37,7 +37,7 @@ class CategoryList extends Component {
     }
 
     getLocation() {
-        axios.get('/restaurant/getRestaurantsDetails/' + this.state.location).then(res => {
+        axios.get('http://localhost:1050/restaurant/getRestaurantsDetails/' + this.state.location).then(res => {
             // console.log(res.data.message)
             this.setState({ restro: res.data.message, errorMessage: "", loading: false, temp: true })
         }).catch(error => {

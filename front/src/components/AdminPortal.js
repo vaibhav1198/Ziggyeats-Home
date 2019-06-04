@@ -283,7 +283,7 @@ class AddRestaurant extends React.Component {
         })
         var newRestaurant = this.state.formValues;
         newRestaurant.totalDishes = this.state.totalDishes;
-        axios.post('/restaurant/insertRestaurant', newRestaurant).then((response) => {
+        axios.post('http://localhost:1050/restaurant/insertRestaurant', newRestaurant).then((response) => {
             // console.log(response)
             this.setState({ successMessage: "Restaurant Has been added!!", errorMessage: '' })
         }).catch((err) => {
@@ -534,7 +534,7 @@ class ViewRestaurant extends React.Component {
         }
     }
     componentDidMount = () => {
-        axios.get('/restaurant/getPendingRestaurants').then((response) => {
+        axios.get('http://localhost:1050/restaurant/getPendingRestaurants').then((response) => {
             // console.log(response)
             this.setState({ viewRestaurant: response.data.message, loading: false })
         })
@@ -572,13 +572,13 @@ class ViewRestaurant extends React.Component {
             location: location,
             totalDishes: totalDishesArr
         }
-        axios.post('/restaurant/insertRestaurant', newRestaurant).then((response) => {
+        axios.post('http://localhost:1050/restaurant/insertRestaurant', newRestaurant).then((response) => {
             this.setState({ successMessage: "Restaurant accepted" })
         }).catch((err) => {
             this.setState({ errorMessage: "error while accepting" })
         })
 
-        axios.delete("/restaurant/rejectRestaurantRequest/" + restaurantName).then((response) => {
+        axios.delete("http://localhost:1050/restaurant/rejectRestaurantRequest/" + restaurantName).then((response) => {
             this.setState({ successMessage: "Restaurant Rejected" })
         }).catch((err) => {
             this.setState({ errorMessage: "error while rejecting" })
@@ -588,7 +588,7 @@ class ViewRestaurant extends React.Component {
     restaurantRejected = (e) => {
         this.setState({ buttonClicked: true })
         var restaurantName = e.target.id;
-        axios.delete("/restaurant/rejectRestaurantRequest/" + restaurantName).then((response) => {
+        axios.delete("http://localhost:1050/restaurant/rejectRestaurantRequest/" + restaurantName).then((response) => {
             this.setState({ successMessage: "Restaurant Rejected" })
         }).catch((err) => {
             this.setState({ errorMessage: "error while rejecting" })
@@ -709,7 +709,7 @@ class AdminPortal extends React.Component {
     }
     componentDidMount() {
         this.setState({ userData: [], errorMessage: '' })
-        axios.get('/auth/getCustomerDetails/' + this.state.customerId).then(response => {
+        axios.get('http://localhost:1050/auth/getCustomerDetails/' + this.state.customerId).then(response => {
             this.setState({ userData: response.data.message[0], errorMessage: '', loading: false })
         }).catch(error => {
             if (error.response) {

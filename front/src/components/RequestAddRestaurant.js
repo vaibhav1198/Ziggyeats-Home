@@ -55,7 +55,7 @@ export default class AddRestaurant extends Component {
         this.setState({ clicked: true })
         var newRestaurant = this.state.formValues;
         newRestaurant.totalDishes = this.state.totalDishes;
-        axios.post('/restaurant/insertRestaurantRequest', newRestaurant)
+        axios.post('http://localhost:1050/restaurant/insertRestaurantRequest', newRestaurant)
             .then((response) => {
                 this.setState({ successMessage: 'Request Received', errorMessage: '' })
             }).catch((err) => {

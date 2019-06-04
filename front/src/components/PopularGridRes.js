@@ -53,7 +53,7 @@ class TitlebarGridList extends React.Component {
         else {
             currentCity = this.state.currentCity
         }
-        axios.get("/restaurant/getRestaurantsByRatings/" + currentCity).then((response) => {
+        axios.get("http://localhost:1050/restaurant/getRestaurantsByRatings/" + currentCity).then((response) => {
             this.setState({
                 restaurantsDetails: response.data.message,
                 errorMessage: ''

@@ -179,7 +179,7 @@ class MyReviews extends React.Component {
     showForm = (event) => {
         this.options = '';
         if (event.target.value) {
-            axios.get('/restaurant/getRestaurantDetails/' + event.target.value)
+            axios.get('http://localhost:1050/restaurant/getRestaurantDetails/' + event.target.value)
                 .then((response) => {
                     this.setState({ selectedRestaurant: response.data.message })
                 }).catch((err) => {
@@ -372,7 +372,7 @@ class EditRestaurant extends React.Component {
     showForm = (event) => {
         this.options = '';
         if (event.target.value) {
-            axios.get('/restaurant/getRestaurantDetails/' + event.target.value)
+            axios.get('http://localhost:1050/restaurant/getRestaurantDetails/' + event.target.value)
                 .then((response) => {
                     this.setState({ selectedRestaurant: response.data.message })
                 })
@@ -464,7 +464,7 @@ class EditRestaurant extends React.Component {
         this.setState({
             clicked: true
         })
-        axios.put('/restaurant/updateRestaurant', this.state.selectedRestaurant[0])
+        axios.put('http://localhost:1050/restaurant/updateRestaurant', this.state.selectedRestaurant[0])
             .then((response) => {
                 this.setState({ successMessage: response.data.message, errorMessage: '' })
             })
@@ -493,7 +493,7 @@ class EditRestaurant extends React.Component {
 
     deleteRestaurantButon = () => {
         this.setState({ clicked: true })
-        axios.put('/restaurant/updateRestaurant', { "restaurantName": this.state.selectedRestaurant[0].restaurantName, "delete": true })
+        axios.put('http://localhost:1050/restaurant/updateRestaurant', { "restaurantName": this.state.selectedRestaurant[0].restaurantName, "delete": true })
             .then((response) => {
                 this.setState({ successMessage: response.data.message, errorMessage: '' })
             })
@@ -629,7 +629,7 @@ class OrderHistory extends React.Component {
         }
     }
     componentDidMount = () => {
-        axios.get('/order/getOrderHistory/' + this.state.userData.address).then((response) => {
+        axios.get('http://localhost:1050/order/getOrderHistory/' + this.state.userData.address).then((response) => {
             // console.log(response)
             this.setState({ orderHistory: response.data.message, loading: false })
         })
@@ -654,7 +654,7 @@ class OrderHistory extends React.Component {
             orderId: orderId,
             orderStatus: "delivered"
         }
-        axios.put("/order/updateOrderStatus", orderObj).then((response) => {
+        axios.put("http://localhost:1050/order/updateOrderStatus", orderObj).then((response) => {
             this.setState({ successMessage: "Order Delivered" })
         })
             .catch((err) => {
@@ -672,7 +672,7 @@ class OrderHistory extends React.Component {
             orderId: orderId,
             orderStatus: "canceled"
         }
-        axios.put("/order/updateOrderStatus", orderObj).then((response) => {
+        axios.put("http://localhost:1050/order/updateOrderStatus", orderObj).then((response) => {
             this.setState({ successMessage: "Order Cancelled! Unable to take more orders at this moment" })
         })
             .catch((err) => {
@@ -782,7 +782,7 @@ class RestaurantOwner extends React.Component {
     }
     componentDidMount() {
         // console.log(this.state.userData)
-        axios.get('/restaurant/getRestaurants/' + this.state.userData.address)
+        axios.get('http://localhost:1050/restaurant/getRestaurants/' + this.state.userData.address)
             .then((restaurants) => {
                 this.setState({ restaurants: restaurants.data.message, errorMessage: '' })
             })
@@ -836,7 +836,7 @@ class RestaurantOwnerHome extends React.Component {
         }
         // var componentDidMount = true;
         this.setState({ userData: [], errorMessage: '' })
-        axios.get('/auth/getCustomerDetails/' + this.state.customerId).then(response => {
+        axios.get('http://localhost:1050/auth/getCustomerDetails/' + this.state.customerId).then(response => {
             // console.log(response)
             this.setState({ userData: response.data.message[0], errorMessage: '', loading: false })
         }).catch(error => {

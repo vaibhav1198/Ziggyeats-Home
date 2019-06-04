@@ -33,7 +33,7 @@ export default class OrderHistory extends Component {
             orderId: orderId,
             orderStatus: "cancelled"
         }
-        axios.put("/order/updateOrderStatus", orderObj).then((response) => {
+        axios.put("http://localhost:1050/order/updateOrderStatus", orderObj).then((response) => {
             this.setState({ successMessage: "Order Cancelled!", redHome: true })
         }).catch((err) => {
                 this.setState({ errorMessage: "error while updating status" })
@@ -43,7 +43,7 @@ export default class OrderHistory extends Component {
     onCityChange = (e) => {
         this.setState({ city: e.target.value, buttonActive: true, ifLocation: true });
         // console.log(e.target.value.code)
-        axios.get('/order/getOrderHistory/' + e.target.value.code).then((response) => {
+        axios.get('http://localhost:1050/order/getOrderHistory/' + e.target.value.code).then((response) => {
             // console.log(response)
             this.setState({ orderHistory: response.data.message, loading: false })
         }).catch((err) => {

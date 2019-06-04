@@ -44,7 +44,7 @@ export default class EditDetails extends Component {
     updateData = (event) => {
         event.preventDefault()
         this.setState({ customerRedirect: false, successMessage: "", errorMessage: "" })
-        axios.post('/auth/updateDetails', this.state.editForm).then((response) => {
+        axios.post('http://localhost:1050/auth/updateDetails', this.state.editForm).then((response) => {
             //console.log(response.data.message);
             this.setState({ successMessage: response.data.message, errorMessage: "" })
         }).catch((error) => {

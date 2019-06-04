@@ -117,7 +117,7 @@ class NavBar extends React.Component {
             logOut: true,
             customerId: null
         })
-        axios.delete('/auth/deleteLoginUser/' + this.props.customerId)
+        axios.delete('http://localhost:1050/auth/deleteLoginUser/' + this.props.customerId)
     }
 
     // redirect to resp portal
@@ -277,7 +277,7 @@ class NavBar extends React.Component {
             firstTimeLogin: true,
             LerrorMessage: ""
         })
-        axios.post('/auth/login', this.state.logInForm).then((response) => {
+        axios.post('http://localhost:1050/auth/login', this.state.logInForm).then((response) => {
             if (response.length !== 0) {
                 this.setState({ result: response.data[0], customerId: response.data[0].customerId, errorMessage: "", SerrorMessage: '', loginload: false, LerrorMessage: '', customerRedirect: true, accType: response.data[0].admin, rOwner: response.data[0].rOwner, })
                 localStorage.setItem('admin', response.data[0].admin)
@@ -300,7 +300,7 @@ class NavBar extends React.Component {
     customerSignup = (event) => {
         event.preventDefault()
         this.setState({ supload: true, customerRedirect: false, successMessage: "", errorMessage: "", SerrorMessage: "" })
-        axios.post('/auth/register', this.state.signUpForm).then((response) => {
+        axios.post('http://localhost:1050/auth/register', this.state.signUpForm).then((response) => {
             this.setState({ successMessage: "Registration Successful", errorMessage: "", SerrorMessage: '', LerrorMessage: '', reload: true, })
         })
             .catch((error) => {
@@ -380,7 +380,7 @@ class NavBar extends React.Component {
     }
 
     getLocation() {
-        axios.get('/restaurant/getRestaurants/' + this.state.city.code).then(res => {
+        axios.get('http://localhost:1050/restaurant/getRestaurants/' + this.state.city.code).then(res => {
             this.setState({ restaurants: res.data.message, errorMessage: "" })
         }).catch(error => {
             if (error.res) {

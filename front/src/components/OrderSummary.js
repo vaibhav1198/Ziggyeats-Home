@@ -41,7 +41,7 @@ class OrderSummary extends Component {
         else {
             this.setState({ currentCity: localStorage.getItem('currentCity') })
         }
-        axios.get('/auth/getdetails/' + this.state.customerId)
+        axios.get('http://localhost:1050/auth/getdetails/' + this.state.customerId)
             .then((response) => {
                 // //console.log(response)
                 this.setState({ customerDetails: response.data.message, errorMessage: '' })
@@ -82,7 +82,7 @@ class OrderSummary extends Component {
         else {
             order.price = this.price
         }
-        axios.post('/order/insertOrder/' + this.state.customerId, order)
+        axios.post('http://localhost:1050/order/insertOrder/' + this.state.customerId, order)
             .then((response) => {
                 this.setState({ successMessage: "Order placed!", errorMessage: '' })
             }).catch((err) => {
@@ -94,7 +94,7 @@ class OrderSummary extends Component {
                 }
             })
         if (this.state.couponApplied) {
-            axios.post('/auth/decreaseCoupons/' + this.state.customerId)
+            axios.post('http://localhost:1050/auth/decreaseCoupons/' + this.state.customerId)
                 .then((response) => {
                     //console.log("success",response.data.message)
                 }).catch((err) => {
