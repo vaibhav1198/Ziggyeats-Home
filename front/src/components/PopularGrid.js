@@ -65,7 +65,6 @@ class SingleLineGridList extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         if (this.state.orderNowClicked) {
             this.setState({
                 orderNowClicked: false
