@@ -61,11 +61,11 @@ class SingleLineGridList extends React.Component {
             }
             return obj;
         })
-
         this.classes = props.classes;
     }
 
     render() {
+        console.log(this.props)
         if (this.state.orderNowClicked) {
             this.setState({
                 orderNowClicked: false

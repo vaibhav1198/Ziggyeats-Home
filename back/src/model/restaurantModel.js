@@ -102,7 +102,7 @@ restaurantModel.mGetRestaurantsByTrendCount = () => {
 //get restaurants by trendcount
 restaurantModel.mGetRestaurantsByRatings = (location) => {
     return connection.getRestaurants(location).then((model) => {
-        return model.find({ location: location }, { _id: 0, restaurantName: 1, location: 1, ratings: 1 }).sort({ ratings: -1 }).then((res) => {
+        return model.find({ location: location }, { _id: 0, restaurantName: 1, location: 1, ratings: 1, image: 1 }).sort({ ratings: -1 }).then((res) => {
             if (res) {
                 var restaurants = [];
                 for (var i = 0; i < 5; i++) {
@@ -197,7 +197,7 @@ restaurantModel.mGiveRating = (restaurantName, rating) => {
 restaurantModel.mGetRestaurantsByTrendCountLoc = (location) => {
     if (location == "Mysuru") location = "Mysore";
     return connection.getRestaurants().then((model) => {
-        return model.find({ location: location }, { _id: 0, restaurantName: 1, category: 1, location: 1, ratings: 1 }).sort({ trendCount: -1 }).then((response) => {
+        return model.find({ location: location }, { _id: 0, restaurantName: 1, category: 1, location: 1, ratings: 1, image: 1 }).sort({ trendCount: -1 }).then((response) => {
             if (response) {
                 var restaurants = [];
                 for (var i = 0; i < 5; i++) {
