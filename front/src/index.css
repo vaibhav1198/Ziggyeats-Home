@@ -1,0 +1,326 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: 'linear-gradient(45deg, #00B8D4 30%, #18FFFF 90%)'
+}
+.cotainer{
+  background: 'linear-gradient(45deg, #00B8D4 30%, #18FFFF 90%)'
+}
+.container-fluid{
+  background: 'linear-gradient(45deg, #00B8D4 30%, #18FFFF 90%)'
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body .p-tabview.p-tabview-top .p-tabview-nav a{
+  width: 350px
+}
+
+.navbarHome {
+   background:url('./assets/navbar-bg.jpg') no-repeat center center;
+  background-size:cover;  
+  position: relative;
+  height: 370px
+}
+
+
+.loginBG{
+  
+  background:url('./assets/login.jpg') no-repeat  ;
+  background-size:cover;  
+  position: relative;
+}
+.registerBG{
+
+  background:url('./assets/register.jpg') no-repeat ;
+  background-size:cover;  
+  position: relative;
+}
+.picOpacity{
+opacity: 0.9;
+}
+.navbar-brand {
+position : absolute;
+  height: 180px;
+  line-height: 80px;
+  left: 48%;
+  margin-left: -50px;
+ 
+
+
+}
+
+.navbar-toggle {
+  /* (80px - button height 34px) / 2 = 23px */
+   margin-top: -23px;
+  padding: 9px 10px !important; 
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    padding-top: 26.5px;
+    padding-bottom: 26.5px;
+    line-height: 27px;
+  }
+  
+}
+
+@media (max-width: 480px){ 
+  #collapsibleNavbar{
+  position: absolute;
+  top:20;
+  right:50
+}
+
+#collapsibleNavbar2{
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 30%;
+}
+  #dialogBox{
+    width: 90%;
+  }
+
+  #logoutRes{
+    margin-right: -38px;
+    margin-top: -350px;
+  }
+  
+
+  #dialogBox2{
+    width: 90%;
+  }
+
+}
+
+@media (min-width: 480px){
+  .navbar-toggler{
+    display: none;
+  }
+
+  #navbar-togglerSmallNav{
+  
+    display:none
+  }
+
+  #dialogBox{
+    width:40vw
+  }
+  #dialogBox2{
+    width:40vw
+  }
+
+ 
+}
+
+.navbar-toggler{
+  margin-left: 250px;
+  margin-top: -580px;
+}
+
+#navbar-togglerSmallNav{
+  
+  margin-top: -100px;
+}
+
+#logoImage {
+  box-shadow: 0 10px 20px 0 black;
+  position: absolute;
+  height: 140px;
+  line-height: 80px;
+  left: 48%;
+  margin-left: -50px;
+ 
+}
+
+#logoImageRes {
+  position: relative;
+  height: 140px;
+  line-height: 190px;
+  left: -36%;
+  margin-left: -20%;
+margin-top: 30%;
+margin-bottom: 10%;
+position: relative;
+right:900px;
+height:90px;
+padding-left: 20px
+}
+
+#logoText {
+
+  position: absolute;
+  top:80%;
+  line-height: 80px;
+  left: 37%;
+  margin-left: -50px;
+  
+  text-shadow: 0 30px 20px 0 white;
+  font-family: 'Amaranth';
+  font-size: 30px;
+  /* WebKit (Safari/Chrome) Only */
+  -webkit-text-stroke: 1px black;
+  
+  /* If we weren't using text-shadow, we'd set a fallback color
+     and use this to set color instead
+    -webkit-text-fill-color: white; */
+  
+  color: white;
+  
+  text-shadow:
+    1px 1px 0 #000,
+    /* Simulated effect for Firefox and Opera
+       and nice enhancement for WebKit */
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000;
+
+}
+
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#logoImage2 {
+  position: relative;
+  right:900px;
+  height:90px;
+  padding-left: 20px
+}
+
+img{
+  object-fit: cover;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.customize-button-login:hover{
+  opacity: 0.7;
+  background-color:transparent;
+  background: "linear-gradient(45deg, #B2EBF2 30%, #4DD0E1 90%)"
+}
+
+.customize-button-register{
+  border: 2 solid #B2EBF2;
+  background-color:transparent;  
+}
+
+.customize-button-register:hover{
+  opacity: 0.7;
+  background-color:transparent;
+  background: #B2EBF2
+}
+
+#datasc .p-datascroller-content{
+  border: none;
+  background-color: transparent;
+  padding: .25em .625em;
+}
+
+
+body .p-tabview.p-tabview-top .p-tabview-nav a{
+  width: 350px
+  
+}
+.p-rating{
+  color: yellow;
+}
+
+
+@media(min-width: 480px){
+  #wop{
+    position: static;
+    top: 100px;
+    margin-left: 220px;
+    margin-right: 220px
+  }
+}
+
+
+
+@media (max-width: 480px){
+  #wop{
+    position: static;
+    top: 100px;
+    width:50%;
+    margin-left:100px;
+  }
+
+
+  #tabviewCard{
+    padding-left: 0px;
+    margin-left:0px;
+    width:109%;
+  }
+
+  
+}
+
+
+.borderless td, .borderless th {
+  border: none;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.imgContainer .btn {
+  position: absolute;
+  top: 24px;
+  right: -18px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:yellow;
+  color: black;
+  font-size: 16px;
+
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+.signupred {
+  cursor:pointer;
+}
+.signupred:hover {
+  text-decoration:underline;
+}
+
+/* .p-unselectable-text ul,
+.p-unselectable-text li,{
+  max-width: 300px;
+} */
