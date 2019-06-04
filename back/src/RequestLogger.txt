@@ -33213,3 +33213,13 @@ Tue Jun 04 2019 14:52:46 GMT+0530 (India Standard Time) GET /restaurant/getResta
 Tue Jun 04 2019 14:52:46 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByRatings/Mysore
 Tue Jun 04 2019 14:52:47 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByTrendCountLoc/Chandigarh
 Tue Jun 04 2019 14:52:47 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByRatings/Chandigarh
+Tue Jun 04 2019 15:33:46 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByTrendCountLoc/Chandigarh
+Tue Jun 04 2019 15:33:46 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByRatings/Chandigarh
+Tue Jun 04 2019 15:33:47 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByTrendCountLoc/Chandigarh
+Tue Jun 04 2019 15:33:47 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByRatings/Chandigarh
+Tue Jun 04 2019 15:33:48 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByTrendCountLoc/Chandigarh
+Tue Jun 04 2019 15:33:48 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByRatings/Chandigarh
+Tue Jun 04 2019 15:43:30 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByTrendCountLoc/Chandigarh
+Tue Jun 04 2019 15:43:30 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByRatings/Chandigarh
+Tue Jun 04 2019 15:43:31 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByTrendCountLoc/Chandigarh
+Tue Jun 04 2019 15:43:31 GMT+0530 (India Standard Time) GET /restaurant/getRestaurantsByRatings/Chandigarh
